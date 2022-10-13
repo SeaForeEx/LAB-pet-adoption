@@ -268,9 +268,9 @@ const rootDiv = document.getElementById("root");
     <p class="list-group-item pet-color card">${pet.color}</p>
     <p class="list-group-item special-skill card">${pet.specialSkill}</p>
   <footer class="pet-type">${pet.type.toUpperCase()}</footer>
-</div>
+</div> 
   `;
   rootDiv.innerHTML+=bootstrapCardString;
  }
 
- 
+ //This shizzzzzzz be so ridiculous

@@ -1,0 +1,162 @@
+body {
+  background-image: url('images/dogcatcuddle.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+header {
+  text-align: center;
+  padding: 10px 0 10px 0;
+  font-size: 64px;
+  font-family: 'Preahvihear', sans-serif;
+  color:antiquewhite;
+  text-shadow: 2px 2px slategrey;
+  background-color: hsla(40, 20%, 24%, 0.5);
+}
+
+.buttonz {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+button:active {
+  background-color: orange;
+}
+
+.meow {
+  border-color: rgb(168, 25, 54);
+}
+
+.meow::before {
+  color:rgb(168, 25, 54);
+  font-size: 42px;
+  font-family: 'Preahvihear', sans-serif;
+  border-color: rgb(168, 25, 54);
+  content: "CATS";
+  text-shadow: 3px 3px antiquewhite;
+}
+
+.meow:hover {
+  background-color: antiquewhite;
+  border-color: rgb(168, 25, 54);
+}
+
+.meow:hover:before {
+  content: "MEOW";
+  color:rgb(168, 25, 54);
+}
+
+.woof {
+  border-color: rgb(15, 133, 43);
+}
+
+.woof::before {
+  color:rgb(15, 133, 43);
+  font-size: 42px;
+  font-family: 'Preahvihear', sans-serif;
+  border-color: rgb(15, 133, 43);
+  content: "DOGS";
+  text-shadow: 3px 3px antiquewhite;
+}
+
+.woof:hover {
+  background-color: antiquewhite;
+  border-color: rgb(15, 133, 43);
+}
+
+.woof:hover:before {
+  content: "WOOF";
+  color:rgb(15, 133, 43);
+}
+
+.roar {
+  border-color: rgb(36, 10, 110);
+}
+
+.roar::before {
+  color:rgb(36, 10, 110);
+  font-size: 42px;
+  font-family: 'Preahvihear', sans-serif;
+  border-color: rgb(36, 10, 110);
+  content: "DINOS";
+  text-shadow: 3px 3px antiquewhite;
+}
+
+.roar:hover {
+  background-color: antiquewhite;
+  border-color: rgb(36, 10, 110);
+}
+
+.roar:hover:before {
+  content: "ROAR";
+  color:rgb(36, 10, 110);
+}
+
+#root {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 20px;
+  flex: 1 1 calc(33% - 40px);
+  display: flex;
+  justify-content: center;
+  background-color: hsla(0, 9%, 47%, 0.5);
+
+}
+
+.pet-image {
+  padding: 25px;
+  opacity: 2;
+}
+
+.card {
+  text-align: center;
+}
+
+.pet-name {
+  padding-top: 10px;
+  font-size: 48px;
+  font-family: 'Preahvihear', sans-serif;
+  color:antiquewhite;
+  text-shadow: 2px 2px slategrey;
+  background-color: hsla(40, 20%, 24%, 0.5);
+  align-items: start;
+}
+
+.pet-color {
+  padding-top: 10px;
+  font-size: 20px;
+  font-family: 'Preahvihear', sans-serif;
+  color:antiquewhite;
+  text-shadow: 2px 2px slategrey;
+}
+
+.special-skill {
+  padding-top: 10px;
+  font-size: 20px;
+  font-family: 'Preahvihear', sans-serif;
+  color:antiquewhite;
+  text-shadow: 2px 2px slategrey;
+  padding: 0 15px 0 15px;
+  margin-bottom: 10px;
+}
+
+.pet-type {
+  align-items: end;
+  padding: 10px 0 10px 0;
+  font-size: 24px;
+  font-family: 'Preahvihear', sans-serif;
+  color:antiquewhite;
+  text-shadow: 2px 2px slategrey;
+  background-color: hsla(40, 20%, 24%, 0.5);
+}

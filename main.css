@@ -116,7 +116,6 @@ button:active {
 
 .pet-image {
   padding: 25px;
-  opacity: 2;
 }
 
 .card {
@@ -142,7 +141,7 @@ button:active {
 }
 
 .special-skill {
-  padding-top: 10px;
+  padding-top: 5px;
   font-size: 20px;
   font-family: 'Preahvihear', sans-serif;
   color:antiquewhite;

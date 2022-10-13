@@ -240,3 +240,23 @@ const pets = [
       imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
     }
   ];
+
+
+const rootDiv = document.getElementById("root");
+
+
+ for (let i=0; i<pets.length; i++) {
+  const pet=pets[i];
+  const cardString = `
+  <div class="card">
+    <div class="pet-name">${pet.name.toUpperCase()}</div>
+    <div class="pet-image"><img class="img-fluid w-100" src="${pet.imageUrl}"></div>
+    <div class="pet-color">${pet.color}</div>
+    <div class="special-skill">${pet.specialSkill}</div>
+    <div class="pet-type">${pet.type.toUpperCase()}</div>
+  </div>
+  `;
+  rootDiv.innerHTML+=cardString;
+ }
+
+ 

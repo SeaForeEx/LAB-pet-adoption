@@ -245,7 +245,7 @@ const pets = [
 const rootDiv = document.getElementById("root");
 
 
- for (let i=0; i<pets.length; i++) {
+ /*for (let i=0; i<pets.length; i++) {
   const pet=pets[i];
   const cardString = `
   <div class="card">
@@ -257,6 +257,20 @@ const rootDiv = document.getElementById("root");
   </div>
   `;
   rootDiv.innerHTML+=cardString;
+ }*/
+
+ for (let i=0; i<pets.length; i++) {
+  const pet=pets[i];
+  const bootstrapCardString = `
+  <div class="card">
+    <h5 class="pet-name">${pet.name.toUpperCase()}</h5>
+    <div><img src="${pet.imageUrl}" class="img-fluid w-100" alt="a pet you need to adopt"></div>
+    <p class="list-group-item pet-color card">${pet.color}</p>
+    <p class="list-group-item special-skill card">${pet.specialSkill}</p>
+  <footer class="pet-type">${pet.type.toUpperCase()}</footer>
+</div>
+  `;
+  rootDiv.innerHTML+=bootstrapCardString;
  }
 
  

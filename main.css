@@ -35,6 +35,10 @@ button:active {
   border-color: rgb(168, 25, 54);
 }
 
+footer {
+  color:rgb(168, 25, 54);
+}
+
 .meow::before {
   color:rgb(168, 25, 54);
   font-size: 42px;
@@ -100,6 +104,29 @@ button:active {
   color:rgb(36, 10, 110);
 }
 
+.allPets {
+  border-color: rgb(165, 149, 118);
+}
+
+.allPets::before {
+  color: rgb(165, 149, 118);
+  font-size: 42px;
+  font-family: 'Preahvihear', sans-serif;
+  border-color: rgb(165, 149, 118);
+  content: "ALL PETS";
+  text-shadow: 3px 3px rgb(21, 18, 38);
+}
+
+.allPets:hover {
+  background-color: antiquewhite;
+  border-color: rgb(165, 149, 118);
+}
+
+.allPets:hover:before {
+  content: "CHAOS";
+  color:rgb(165, 149, 118);
+}
+
 #root {
   display: flex;
   flex-wrap: wrap;
@@ -111,7 +138,6 @@ button:active {
   display: flex;
   justify-content: center;
   background-color: hsla(0, 9%, 47%, 0.5);
-
 }
 
 .pet-image {

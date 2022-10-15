@@ -244,21 +244,6 @@ const pets = [
 
 const rootDiv = document.getElementById("root");
 
-
- /*for (let i=0; i<pets.length; i++) {
-  const pet=pets[i];
-  const cardString = `
-  <div class="card">
-    <div class="pet-name">${pet.name.toUpperCase()}</div>
-    <div class="pet-image"><img class="img-fluid w-100" src="${pet.imageUrl}"></div>
-    <div class="pet-color">${pet.color}</div>
-    <div class="special-skill">${pet.specialSkill}</div>
-    <div class="pet-type">${pet.type.toUpperCase()}</div>
-  </div>
-  `;
-  rootDiv.innerHTML+=cardString;
- }*/
-
  for (let i=0; i<pets.length; i++) {
   const pet=pets[i];
   const bootstrapCardString = `
@@ -267,10 +252,67 @@ const rootDiv = document.getElementById("root");
     <div><img src="${pet.imageUrl}" onerror="this.src='images/missingimg.jpeg'" class="img-fluid w-100" alt="a pet you need to adopt"></div>
     <p class="list-group-item pet-color card">${pet.color}</p>
     <p class="list-group-item special-skill card">${pet.specialSkill}</p>
-  <footer class="pet-type">${pet.type.toUpperCase()}</footer>
+  <footer class="pet-type">${pet.type.toUpperCase()}
+</footer>
 </div> 
   `;
   rootDiv.innerHTML+=bootstrapCardString;
  }
-
  //This shizzzzzzz be so ridiculous
+
+const renderToDom = (divId, htmlToRender) => {
+  const selectedDiv = document.querySelector(divId);
+  selectedDiv.innerHTML = htmlToRender;
+}; //Renders pets to DOM
+
+const cardsOnDom = (array) => {
+  let domString = "";
+  for (const pet of array) {
+    domString += `
+    <div class="card">
+    <h5 class="pet-name">${pet.name.toUpperCase()}</h5>
+    <div><img src="${pet.imageUrl}" onerror="this.src='images/missingimg.jpeg'" class="img-fluid w-100" alt="a pet you need to adopt"></div>
+    <p class="list-group-item pet-color card">${pet.color}</p>
+    <p class="list-group-item special-skill card">${pet.specialSkill}</p>
+    <footer class="pet-type">${pet.type.toUpperCase()}</footer>
+    </div> 
+    `;
+  }
+  renderToDom("#root", domString);
+} //Get each card on the DOM
+
+const filter = (array, typeString) => {
+  const typeArray = []; //Filters terms with specific type
+
+  for (const member of array) {
+    if (member.type === typeString) {
+    typeArray.push(member);
+  }
+} //Goes through array and adds qualifying member to array
+
+return typeArray;
+}
+
+const showCats = document.querySelector(".meow");
+const showDogs = document.querySelector(".woof");
+const showDino = document.querySelector(".roar");
+const showAllPets = document.querySelector(".allPets");
+
+showCats.addEventListener('click', () => {
+  const kitties = filter(pets, 'cat');
+  cardsOnDom(kitties);
+})
+
+showDogs.addEventListener('click', () => {
+  const puppies = filter(pets, 'dog');
+  cardsOnDom(puppies);
+})
+
+showDino.addEventListener('click', () => {
+  const saurus = filter(pets, 'dino');
+  cardsOnDom(saurus);
+})
+
+showAllPets.addEventListener('click', () => {
+  cardsOnDom(pets);
+})

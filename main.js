@@ -245,19 +245,52 @@ const pets = [
 const rootDiv = document.getElementById("root");
 
  for (let i=0; i<pets.length; i++) {
+  
   const pet=pets[i];
+
+  if (pet.type === 'cat') {
+  
+  
   const bootstrapCardString = `
   <div class="card">
     <h5 class="pet-name">${pet.name.toUpperCase()}</h5>
-    <div><img src="${pet.imageUrl}" onerror="this.src='images/missingimg.jpeg'" class="img-fluid w-100" alt="a pet you need to adopt"></div>
+    <div><img src="${pet.imageUrl}" onerror="this.src='images/missingimg.jpeg'" class="img-fluid w-100" alt="a ${pet.type} you need to adopt"></div>
     <p class="list-group-item pet-color card">${pet.color}</p>
     <p class="list-group-item special-skill card">${pet.specialSkill}</p>
-  <footer class="pet-type">${pet.type.toUpperCase()}
-</footer>
-</div> 
+    <footer class="catFooter">${pet.type.toUpperCase()}</footer>
+  </div> 
   `;
   rootDiv.innerHTML+=bootstrapCardString;
+
+  } else if (pet.type === 'dog') {
+
+  const bootstrapCardString = `
+  <div class="card">
+    <h5 class="pet-name">${pet.name.toUpperCase()}</h5>
+    <div><img src="${pet.imageUrl}" onerror="this.src='images/missingimg.jpeg'" class="img-fluid w-100" alt="a ${pet.type} you need to adopt"></div>
+    <p class="list-group-item pet-color card">${pet.color}</p>
+    <p class="list-group-item special-skill card">${pet.specialSkill}</p>
+    <footer class="dogFooter">${pet.type.toUpperCase()}</footer>
+  </div> 
+  `;
+  rootDiv.innerHTML+=bootstrapCardString;
+
+  } else if (pet.type === 'dino') {
+
+    const bootstrapCardString = `
+  <div class="card">
+    <h5 class="pet-name">${pet.name.toUpperCase()}</h5>
+    <div><img src="${pet.imageUrl}" onerror="this.src='images/missingimg.jpeg'" class="img-fluid w-100" alt="a ${pet.type} you need to adopt"></div>
+    <p class="list-group-item pet-color card">${pet.color}</p>
+    <p class="list-group-item special-skill card">${pet.specialSkill}</p>
+    <footer class="dinoFooter">${pet.type.toUpperCase()}</footer>
+  </div>
+  ` ;
+  rootDiv.innerHTML+=bootstrapCardString;
+  }
+
  }
+
  //This shizzzzzzz be so ridiculous
 
 const renderToDom = (divId, htmlToRender) => {
@@ -268,15 +301,43 @@ const renderToDom = (divId, htmlToRender) => {
 const cardsOnDom = (array) => {
   let domString = "";
   for (const pet of array) {
+    
+    if (pet.type === 'cat') {
+    
     domString += `
     <div class="card">
     <h5 class="pet-name">${pet.name.toUpperCase()}</h5>
-    <div><img src="${pet.imageUrl}" onerror="this.src='images/missingimg.jpeg'" class="img-fluid w-100" alt="a pet you need to adopt"></div>
+    <div><img src="${pet.imageUrl}" onerror="this.src='images/missingimg.jpeg'" class="img-fluid w-100" alt="a ${pet.type} you need to adopt"></div>
     <p class="list-group-item pet-color card">${pet.color}</p>
     <p class="list-group-item special-skill card">${pet.specialSkill}</p>
-    <footer class="pet-type">${pet.type.toUpperCase()}</footer>
+    <footer class="catFooter">${pet.type.toUpperCase()}</footer>
     </div> 
     `;
+    } else if (pet.type === 'dog') {
+
+    domString += `
+    <div class="card">
+    <h5 class="pet-name">${pet.name.toUpperCase()}</h5>
+    <div><img src="${pet.imageUrl}" onerror="this.src='images/missingimg.jpeg'" class="img-fluid w-100" alt="a ${pet.type} you need to adopt"></div>
+    <p class="list-group-item pet-color card">${pet.color}</p>
+    <p class="list-group-item special-skill card">${pet.specialSkill}</p>
+    <footer class="dogFooter">${pet.type.toUpperCase()}</footer>
+    </div> 
+    `;
+
+    } else if (pet.type === 'dino') {
+
+      domString += `
+    <div class="card">
+    <h5 class="pet-name">${pet.name.toUpperCase()}</h5>
+    <div><img src="${pet.imageUrl}" onerror="this.src='images/missingimg.jpeg'" class="img-fluid w-100" alt="a ${pet.type} you need to adopt"></div>
+    <p class="list-group-item pet-color card">${pet.color}</p>
+    <p class="list-group-item special-skill card">${pet.specialSkill}</p>
+    <footer class="dinoFooter">${pet.type.toUpperCase()}</footer>
+    </div> 
+    `;
+
+    }
   }
   renderToDom("#root", domString);
 } //Get each card on the DOM

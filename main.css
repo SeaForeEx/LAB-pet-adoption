@@ -35,9 +35,10 @@ button:active {
   border-color: rgb(168, 25, 54);
 }
 
-footer {
+/*footer {
   color:rgb(168, 25, 54);
-}
+}*/
+
 
 .meow::before {
   color:rgb(168, 25, 54);
@@ -82,26 +83,26 @@ footer {
 }
 
 .roar {
-  border-color: rgb(36, 10, 110);
+  border-color: rgb(45, 28, 175);
 }
 
 .roar::before {
-  color:rgb(36, 10, 110);
+  color:rgb(45, 28, 175);
   font-size: 42px;
   font-family: 'Preahvihear', sans-serif;
-  border-color: rgb(36, 10, 110);
+  border-color: rgb(45, 28, 175);
   content: "DINOS";
   text-shadow: 3px 3px antiquewhite;
 }
 
 .roar:hover {
   background-color: antiquewhite;
-  border-color: rgb(36, 10, 110);
+  border-color: rgb(45, 28, 175);
 }
 
 .roar:hover:before {
   content: "ROAR";
-  color:rgb(36, 10, 110);
+  color:rgb(45, 28, 175);
 }
 
 .allPets {
@@ -114,7 +115,7 @@ footer {
   font-family: 'Preahvihear', sans-serif;
   border-color: rgb(165, 149, 118);
   content: "ALL PETS";
-  text-shadow: 3px 3px rgb(21, 18, 38);
+  text-shadow: 3px 3px rgb(25, 21, 44);
 }
 
 .allPets:hover {
@@ -134,8 +135,8 @@ footer {
 
 .card {
   margin: 20px;
-  flex: 1 1 calc(33% - 40px);
   display: flex;
+  flex: 1 1 calc(33% - 40px);
   justify-content: center;
   background-color: hsla(0, 9%, 47%, 0.5);
 }
@@ -184,4 +185,38 @@ footer {
   color:antiquewhite;
   text-shadow: 2px 2px slategrey;
   background-color: hsla(40, 20%, 24%, 0.5);
+}
+
+.catFooter {
+  align-items: end;
+  padding: 10px 0 10px 0;
+  font-size: 24px;
+  font-family: 'Preahvihear', sans-serif;
+  color:antiquewhite;
+  text-shadow: 2px 2px slategrey;
+  background-color: hsla(0, 80%, 46%, 0.5);
+}
+
+.dogFooter {
+
+  align-items: end;
+  padding: 10px 0 10px 0;
+  font-size: 24px;
+  font-family: 'Preahvihear', sans-serif;
+  color:antiquewhite;
+  text-shadow: 2px 2px slategrey;
+  background-color: hsla(127, 77%, 32%, 0.5);
+  
+}
+
+.dinoFooter {
+
+  align-items: end;
+  padding: 10px 0 10px 0;
+  font-size: 24px;
+  font-family: 'Preahvihear', sans-serif;
+  color:antiquewhite;
+  text-shadow: 2px 2px slategrey;
+  background-color: hsla(245, 87%, 44%, 0.5);
+
 }

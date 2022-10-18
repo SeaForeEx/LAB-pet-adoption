@@ -258,6 +258,7 @@ const rootDiv = document.getElementById("root");
     <p class="list-group-item pet-color card">${pet.color}</p>
     <p class="list-group-item special-skill card">${pet.specialSkill}</p>
     <footer class="catFooter">${pet.type.toUpperCase()}</footer>
+    <button class="btn btn-danger adopt-me" id="delete--${pets.id}">Please Take Me Home!</button>
   </div> 
   `;
   rootDiv.innerHTML+=bootstrapCardString;
@@ -271,6 +272,7 @@ const rootDiv = document.getElementById("root");
     <p class="list-group-item pet-color card">${pet.color}</p>
     <p class="list-group-item special-skill card">${pet.specialSkill}</p>
     <footer class="dogFooter">${pet.type.toUpperCase()}</footer>
+    <button class="btn btn-danger adopt-me" id="delete--${pets.id}">Please Take Me Home!</button>
   </div> 
   `;
   rootDiv.innerHTML+=bootstrapCardString;
@@ -284,9 +286,21 @@ const rootDiv = document.getElementById("root");
     <p class="list-group-item pet-color card">${pet.color}</p>
     <p class="list-group-item special-skill card">${pet.specialSkill}</p>
     <footer class="dinoFooter">${pet.type.toUpperCase()}</footer>
+    <button class="btn btn-danger adopt-me" id="delete--${pets.id}">Please Take Me Home!</button>
   </div>
   ` ;
   rootDiv.innerHTML+=bootstrapCardString;
+  } else {
+    domString += `
+  <div class="card">
+  <h5 class="pet-name">${pet.name.toUpperCase()}</h5>
+  <div><img src="${pet.imageUrl}" onerror="this.src='images/missingimg.jpeg'" class="img-fluid w-100" alt="a ${pet.type} you need to adopt"></div>
+  <p class="list-group-item pet-color card">${pet.color}</p>
+  <p class="list-group-item special-skill card">${pet.specialSkill}</p>
+  <footer class="defaultFooter">${pet.type.toUpperCase()}</footer>
+  <button class="btn btn-danger adopt-me" id="delete--${pets.id}">Please Take Me Home!</button>
+  </div> 
+  `;
   }
 
  }
@@ -311,6 +325,7 @@ const cardsOnDom = (array) => {
     <p class="list-group-item pet-color card">${pet.color}</p>
     <p class="list-group-item special-skill card">${pet.specialSkill}</p>
     <footer class="catFooter">${pet.type.toUpperCase()}</footer>
+    <button class="btn btn-danger adopt-me" id="delete--${pets.id}">Please Take Me Home!</button>
     </div> 
     `;
     } else if (pet.type === 'dog') {
@@ -322,6 +337,7 @@ const cardsOnDom = (array) => {
     <p class="list-group-item pet-color card">${pet.color}</p>
     <p class="list-group-item special-skill card">${pet.specialSkill}</p>
     <footer class="dogFooter">${pet.type.toUpperCase()}</footer>
+    <button class="btn btn-danger adopt-me" id="delete--${pets.id}">Please Take Me Home!</button>
     </div> 
     `;
 
@@ -334,9 +350,21 @@ const cardsOnDom = (array) => {
     <p class="list-group-item pet-color card">${pet.color}</p>
     <p class="list-group-item special-skill card">${pet.specialSkill}</p>
     <footer class="dinoFooter">${pet.type.toUpperCase()}</footer>
+    <button class="btn btn-danger adopt-me" id="delete--${pets.id}">Please Take Me Home!</button>
     </div> 
     `;
 
+    } else {
+      domString += `
+    <div class="card">
+    <h5 class="pet-name">${pet.name.toUpperCase()}</h5>
+    <div><img src="${pet.imageUrl}" onerror="this.src='images/missingimg.jpeg'" class="img-fluid w-100" alt="a ${pet.type} you need to adopt"></div>
+    <p class="list-group-item pet-color card">${pet.color}</p>
+    <p class="list-group-item special-skill card">${pet.specialSkill}</p>
+    <footer class="defaultFooter">${pet.type.toUpperCase()}</footer>
+    <button class="btn btn-danger adopt-me" id="delete--${pets.id}">Please Take Me Home!</button>
+    </div> 
+    `;
     }
   }
   renderToDom("#root", domString);
@@ -377,3 +405,60 @@ showDino.addEventListener('click', () => {
 showAllPets.addEventListener('click', () => {
   cardsOnDom(pets);
 })
+
+// ADDING THE PETS
+
+// select/target the form on the DOM
+const form = document.querySelector('form');
+
+// create a function that grabs all the values from the form
+// pushes the new object to the array
+// repaints the DOM with the new pet
+const createPet = (e) => {
+  e.preventDefault();
+  const newPetObj = { //grabs the values
+    id: pets.length + 1,
+    name: document.querySelector("#name").value,
+    color: document.querySelector("#color").value,
+    specialSkill: document.querySelector("#specialSkill").value,
+    type: document.querySelector("#type").value.toLowerCase(),
+    imageUrl: document.querySelector("#imageUrl").value
+  }
+
+  pets.push(newPetObj); // pushes new object
+  cardsOnDom(pets); // refreshes DOM with new pet
+  form.reset(); // resets da form
+}
+
+// Add an event listener for the form submit
+// Runs the function once you click Submit
+
+form.addEventListener('submit', createPet);
+
+// DELETE THE PETS
+
+// Target the app div
+const app = document.querySelector("#app");
+
+// Add an event listener to compare clicks
+
+app.addEventListener('click', (e) => {
+  // check e.target.id includes "delete"
+  if (event.target.id.includes("delete")) {
+    const [, id] = event.target.id.split("--");
+
+    // add logic to remove from array
+    const index = pets.findIndex(e => e.id === Number(id));
+    pets.splice(index, 1);
+
+    // Repaint the DOM wiconst app = document.querySelector("#app");th the updated array
+    cardsOnDom(pets);
+  }
+});
+
+const startApp = () => {
+  cardsOnDom(pets);
+  e(); // ALWAYS LAST
+}
+
+startApp();

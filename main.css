@@ -128,6 +128,29 @@ button:active {
   color:rgb(165, 149, 118);
 }
 
+.rescue {
+  border-color: rgb(186, 79, 163);
+}
+
+.rescue::before {
+  color: rgb(186, 79, 163);
+  font-size: 42px;
+  font-family: 'Preahvihear', sans-serif;
+  border-color: rgb(186, 79, 163);
+  content: "RESCUES";
+  text-shadow: 3px 3px rgb(25, 21, 44);
+}
+
+.rescue:hover {
+  background-color: antiquewhite;
+  border-color: rgb(186, 79, 163);
+}
+
+.rescue:hover:before {
+  content: "GREAT!!";
+  color:rgb(186, 79, 163);
+}
+
 #root {
   display: flex;
   flex-wrap: wrap;
@@ -135,8 +158,7 @@ button:active {
 
 .card {
   margin: 20px;
-  display: flex;
-  flex: 1 1 calc(33% - 40px);
+  flex: 0 1 calc(33% - 40px);
   justify-content: center;
   background-color: hsla(0, 9%, 47%, 0.5);
 }
@@ -219,4 +241,57 @@ button:active {
   text-shadow: 2px 2px slategrey;
   background-color: hsla(245, 87%, 44%, 0.5);
 
+}
+
+.defaultFooter {
+
+  align-items: end;
+  padding: 10px 0 10px 0;
+  font-size: 24px;
+  font-family: 'Preahvihear', sans-serif;
+  color:antiquewhite;
+  text-shadow: 2px 2px slategrey;
+  background-color: hsla(308, 76%, 28%, 0.5);
+
+}
+
+.adopt-me {
+  margin: 10px;
+  color:antiquewhite;
+  font-family: 'Preahvihear', sans-serif;
+}
+
+.add-pet {
+  background-color: hsla(0, 9%, 47%, 0.5);
+  border-radius: 5px;
+  font-family: 'Preahvihear', sans-serif;
+  color: rgb(97, 57, 57);
+  width: 50%;
+  padding: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.ap-header {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 48px;
+  font-family: 'Preahvihear', sans-serif;
+  color:antiquewhite;
+  text-shadow: 2px 2px slategrey;
+  background-color: hsla(40, 20%, 24%, 0.5);
+  align-items: start;
+  border-radius: 5px;
+}
+
+.rescue-me {
+  font-size: 20px;
+  font-family: 'Preahvihear', sans-serif;
+  color:antiquewhite;
+}
+ 
+.back-to-top {
+  font-family: 'Preahvihear', sans-serif;
+  color:antiquewhite;
 }

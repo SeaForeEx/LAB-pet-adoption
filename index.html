@@ -5,14 +5,34 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pet Adoption</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <link rel="stylesheet" href="main.css">
   <link rel="shortcut icon" href="#">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Preahvihear&display=swap" rel="stylesheet">
+
+<style>
+  input[type=text] {
+    background-color: antiquewhite;
+  }
+
+  input[type=text]:focus{
+    background-color: antiquewhite;     /* oranges! yey */
+}
+
+  input[type=url] {
+    background-color: antiquewhite;
+  }
+
+  input[type=url]:focus {
+    background-color: antiquewhite;
+  }
+
+</style>
+
 </head>
-<body>
   
 <header>ADOPT A PET OR FAIL NSS</header>
 
@@ -22,14 +42,49 @@
   <div><button type="button" class="btn btn-outline-warning woof"></button></div>
   <div><button type="button" class="btn btn-outline-warning roar"></button></div>
   <div><button type="button" class="btn btn-outline-warning allPets"></button></div>
+  
+  <a href="#strays"><button type="button" class="btn btn-outline-warning rescue"></button></a>
 
-</div> 
+</div>
+
+
+
 
 
 <div id="root"></div>
 
+<form id="strays" class = "add-pet">
+  <div class = "ap-header">Rescued an Animal?</div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="name" placeholder="Name" required>
+    <label for="floatingInput">Pet Name</label>
+  </div>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <div class="form-floating mb-3">
+    <input type="url" class="form-control" id="imageUrl" placeholder="Pet Image" required>
+    <label for="floatingInput">Image</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="color" placeholder="Pet Color" required>
+    <label for="floatingInput">Pet Color</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="specialSkill" placeholder="Special Pet Skill" required>
+    <label for="floatingInput">Special Pet Skill</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="type" placeholder="Pet Type" required>
+    <label for="floatingInput">Pet Type</label>
+  </div>
+  
+  <button type="submit" class="btn btn-success d-grid gap-2 col-8 mx-auto rescue-me" id="form-submit">Let Us Find Them a Home!</button>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
 <script src="main.js"></script>
 </body>
 </html>

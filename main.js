@@ -61,7 +61,7 @@ const pets = [
       color: "Grey",
       specialSkill: "Comfortable in the outdoors for up to eight hours.",
       type: "dino",
-      imageUrl: "http://www.theouthousers.com/images/jck//ThanosCopter/news/grumpasaur.jpg"
+      imageUrl: "https://gingerparrot.co.uk/wp/wp-content/uploads/2020/07/Celebrating-Redheads-photography.jpg"
     },
     {
       id: 9,

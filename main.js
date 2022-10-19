@@ -325,7 +325,7 @@ const cardsOnDom = (array) => {
     <p class="list-group-item pet-color card">${pet.color}</p>
     <p class="list-group-item special-skill card">${pet.specialSkill}</p>
     <footer class="catFooter">${pet.type.toUpperCase()}</footer>
-    <button class="btn btn-danger adopt-me" id="delete--${pets.id}">Please Take Me Home!</button>
+    <button class="btn btn-danger adopt-me" id="delete--${pet.id}">Please Take Me Home!</button>
     </div> 
     `;
     } else if (pet.type === 'dog') {
@@ -337,7 +337,7 @@ const cardsOnDom = (array) => {
     <p class="list-group-item pet-color card">${pet.color}</p>
     <p class="list-group-item special-skill card">${pet.specialSkill}</p>
     <footer class="dogFooter">${pet.type.toUpperCase()}</footer>
-    <button class="btn btn-danger adopt-me" id="delete--${pets.id}">Please Take Me Home!</button>
+    <button class="btn btn-danger adopt-me" id="delete--${pet.id}">Please Take Me Home!</button>
     </div> 
     `;
 
@@ -350,7 +350,7 @@ const cardsOnDom = (array) => {
     <p class="list-group-item pet-color card">${pet.color}</p>
     <p class="list-group-item special-skill card">${pet.specialSkill}</p>
     <footer class="dinoFooter">${pet.type.toUpperCase()}</footer>
-    <button class="btn btn-danger adopt-me" id="delete--${pets.id}">Please Take Me Home!</button>
+    <button class="btn btn-danger adopt-me" id="delete--${pet.id}">Please Take Me Home!</button>
     </div> 
     `;
 
@@ -362,7 +362,7 @@ const cardsOnDom = (array) => {
     <p class="list-group-item pet-color card">${pet.color}</p>
     <p class="list-group-item special-skill card">${pet.specialSkill}</p>
     <footer class="defaultFooter">${pet.type.toUpperCase()}</footer>
-    <button class="btn btn-danger adopt-me" id="delete--${pets.id}">Please Take Me Home!</button>
+    <button class="btn btn-danger adopt-me" id="delete--${pet.id}">Please Take Me Home!</button>
     </div> 
     `;
     }
@@ -437,28 +437,28 @@ form.addEventListener('submit', createPet);
 
 // DELETE THE PETS
 
-// Target the app div
-const app = document.querySelector("#app");
+// Target the root div, create event Listener
+const app = document.querySelector("#root");
 
 // Add an event listener to compare clicks
 
 app.addEventListener('click', (e) => {
   // check e.target.id includes "delete"
-  if (event.target.id.includes("delete")) {
-    const [, id] = event.target.id.split("--");
+  if (e.target.id.includes("delete")) {       // target is button
+    const [, id] = e.target.id.split("--");   // click is e (event)
 
     // add logic to remove from array
     const index = pets.findIndex(e => e.id === Number(id));
-    pets.splice(index, 1);
+    pets.splice(index, 1); // bubbles
 
-    // Repaint the DOM wiconst app = document.querySelector("#app");th the updated array
+    // Reprint the DOM with const app = document.querySelector("#app");th the updated array
     cardsOnDom(pets);
   }
 });
 
 const startApp = () => {
   cardsOnDom(pets);
-  e(); // ALWAYS LAST
+  events(); // ALWAYS LAST
 }
 
 startApp();
